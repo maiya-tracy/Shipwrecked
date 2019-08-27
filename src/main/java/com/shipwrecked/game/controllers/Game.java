@@ -9,4 +9,5 @@ public class Game {
 	public String landingPage() {
 		return "game/landingPage.jsp";
 	}
+	
 }
