@@ -7,5 +7,5 @@ import com.shipwrecked.game.models.Game;
 
 @Repository
 public interface GameRepository extends CrudRepository<Game, Long>{
-
+	
 }
