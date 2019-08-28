@@ -13,17 +13,9 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
-<style>
-	#island{
-		background-img:url("/img/island.png");
-		height:500px;
-		width:500px;
-	}
-</style>
 <body>
 <div class="container">
-<p>Landing Page</p>
-<div id="island"></div>
+<p>in game</p>
 </div>
 </body>
 </html>

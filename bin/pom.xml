@@ -9,21 +9,14 @@
 		<version>2.1.7.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-<<<<<<< HEAD
-	<groupId>com.ravine.game</groupId>
-	<artifactId>ravine</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
-	<name>ravine</name>
-	<description>Ravine Game Project</description>
-=======
+
 	<groupId>com.shipwrecked.game</groupId>
 	<artifactId>shipwrecked</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>shipwrecked</name>
 	<description>Shipwrecked Game Project</description>
->>>>>>> 8c921a4f2830b45465b63b2d110f365838f3562a
+
 
 	<properties>
 		<java.version>1.8</java.version>
