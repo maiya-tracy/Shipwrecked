@@ -11,25 +11,25 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.shipwrecked.game.models.Player;
-import com.shipwrecked.game.services.PlayerService;
+import com.shipwrecked.game.models.User;
+import com.shipwrecked.game.services.UserService;
 
 @Controller
-public class PlayerCtrl {
+public class UserCtrl {
 	@Autowired
-	PlayerService playerService;
+	UserService playerService;
 	
 	@GetMapping("/newPlayer")
-	public String newPlayer(Model model, @ModelAttribute("newPlayer") Player player) {
+	public String newPlayer(Model model, @ModelAttribute("newPlayer") User player) {
 		return "player/newPlayer.jsp";
 	}
 
 	@PostMapping("/newPlayer/process")
-	public String createPlayer(@Valid @ModelAttribute("newPlayer") Player player, BindingResult results, HttpSession session){
+	public String createPlayer(@Valid @ModelAttribute("newPlayer") User player, BindingResult results, HttpSession session){
 		if(results.hasErrors()) {
 			return"player/newPlayer.jsp";
 		}
-		Player p = playerService.createPlayer(player);
+		User p = playerService.createPlayer(player);
 		session.setAttribute("player", p);
 		return"redirect:/createGamePage";
 	}

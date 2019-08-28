@@ -37,7 +37,7 @@ public class Game {
 	private Date updatedAt;
 	
 	@OneToMany(mappedBy = "game", fetch = FetchType.LAZY)
-	private List<Player> players;
+	private List<User> players;
 	
 	@PrePersist
     protected void onCreate(){
@@ -51,7 +51,7 @@ public class Game {
 
 	public Game() {}
 
-	public Game(String lobbyName, String password, List<Player> players) {
+	public Game(String lobbyName, String password, List<User> players) {
 		super();
 		this.lobbyName = lobbyName;
 		this.password = password;
@@ -98,11 +98,11 @@ public class Game {
 		this.updatedAt = updatedAt;
 	}
 
-	public List<Player> getPlayers() {
+	public List<User> getPlayers() {
 		return players;
 	}
 
-	public void setPlayers(List<Player> players) {
+	public void setPlayers(List<User> players) {
 		this.players = players;
 	}
 	

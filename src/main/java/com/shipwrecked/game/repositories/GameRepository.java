@@ -1,4 +1,4 @@
-package com.shipwrecked.game.repository;
+package com.shipwrecked.game.repositories;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;

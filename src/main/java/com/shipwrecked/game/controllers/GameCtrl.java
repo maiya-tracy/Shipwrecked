@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.shipwrecked.game.models.Game;
-import com.shipwrecked.game.models.Player;
+import com.shipwrecked.game.models.User;
 import com.shipwrecked.game.services.GameService;
-import com.shipwrecked.game.services.PlayerService;
+import com.shipwrecked.game.services.UserService;
 
 
 @Controller
@@ -24,7 +24,7 @@ public class GameCtrl {
 	@Autowired
 	GameService gameService;
 	@Autowired
-	PlayerService playerService;
+	UserService playerService;
 	
 	@GetMapping("/")
 	public String landingPage() {
@@ -49,7 +49,7 @@ public class GameCtrl {
 	@PostMapping("/getShipwrecked/{id}/process")
 	public String addPlayer(Model model, @PathVariable("id") Long game_id, HttpSession session) {
 		Game oneGame = gameService.findById(game_id);
-		Player player = (Player) session.getAttribute("player");
+		User player = (User) session.getAttribute("player");
 		
 		player.setGame(oneGame);
 		

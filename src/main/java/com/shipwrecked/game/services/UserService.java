@@ -5,20 +5,20 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.shipwrecked.game.models.Player;
-import com.shipwrecked.game.repository.PlayerRepository;
+import com.shipwrecked.game.models.User;
+import com.shipwrecked.game.repositories.UserRepository;
 
 @Service
-public class PlayerService {
+public class UserService {
 	@Autowired
-	PlayerRepository playerRepository;
+	UserRepository playerRepository;
 	
-	public Player createPlayer(Player player) {
+	public User createPlayer(User player) {
 		// TODO Auto-generated method stub
 		return playerRepository.save(player);
 	}
-	public Player findById(Long id) {
-		Optional<Player> optionalPlayer = playerRepository.findById(id);
+	public User findById(Long id) {
+		Optional<User> optionalPlayer = playerRepository.findById(id);
 		if (optionalPlayer.isPresent()) {
 			return optionalPlayer.get();
 		} else {

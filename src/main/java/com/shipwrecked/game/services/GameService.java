@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.shipwrecked.game.models.Game;
-import com.shipwrecked.game.repository.GameRepository;
+import com.shipwrecked.game.repositories.GameRepository;
 
 @Service
 public class GameService {
