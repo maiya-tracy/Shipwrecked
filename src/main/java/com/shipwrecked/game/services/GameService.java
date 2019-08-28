@@ -1,5 +1,6 @@
 package com.shipwrecked.game.services;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,5 +16,4 @@ public class GameService {
 		// TODO Auto-generated method stub
 		return gameRepository.save(game);
 	}
-
 }

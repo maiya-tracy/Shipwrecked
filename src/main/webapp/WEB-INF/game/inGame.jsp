@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-	<h1>Lobby Waiting room</h1>
-=======
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -27,8 +15,7 @@
 </head>
 <body>
 <div class="container">
-<p>in lobby</p>
+<p>in game</p>
 </div>
->>>>>>> eb558f9437e74288aa4ff8fdfbb22a76e9334c38
 </body>
 </html>
