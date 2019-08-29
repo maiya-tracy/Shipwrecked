@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %> 
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <!DOCTYPE html>
 <html>
@@ -36,6 +36,12 @@
 	}
 </style>
 <body>
+<<<<<<< HEAD
+	<div class="container">
+		<p>Landing Page</p>
+	<a href="/createGamePage">Create Game</a>
+	</div>
+=======
 <div class="container">
 	<div id="header" class="container-fluid">
 		<img id="island" src=<c:url value="/img/island4.png"/>>
@@ -45,5 +51,6 @@
 	</div>
 	<div id="footer"></div>
 </div>
+>>>>>>> eb558f9437e74288aa4ff8fdfbb22a76e9334c38
 </body>
 </html>

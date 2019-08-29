@@ -33,9 +33,17 @@ build/
 /.metadata/
 .metadata/
 =======
+<<<<<<< HEAD
+/.metadata/
+.metadata/
+=======
 
 
 /.metadata/
+.metadata/
 
+<<<<<<< HEAD
+=======
 .metadata
 >>>>>>> 8c921a4f2830b45465b63b2d110f365838f3562a
+>>>>>>> eb558f9437e74288aa4ff8fdfbb22a76e9334c38
