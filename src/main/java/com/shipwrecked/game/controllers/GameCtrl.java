@@ -25,7 +25,7 @@ public class GameCtrl {
 	GameService gameService;
 	@Autowired
 	UserService playerService;
-	
+
 	@GetMapping("/getShipwrecked")
 	public String createOrJoinPage(@ModelAttribute("newGame") Game game) {
 		return "game/createOrJoinPage.jsp";
