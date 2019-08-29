@@ -25,12 +25,7 @@ public class GameCtrl {
 	GameService gameService;
 	@Autowired
 	UserService playerService;
-	
-	
-	@GetMapping("/")
-	public String landingPage() {
-		return "game/landingPage.jsp";
-	}
+
 	
 	@GetMapping("/getShipwrecked")
 	public String createOrJoinPage(@ModelAttribute("newGame") Game game) {
@@ -50,7 +45,7 @@ public class GameCtrl {
 		}
 	}
 	@PostMapping("/getShipwrecked/process/join")
-	public String JoinGame(@RequestParam("lobbyJoinName") String lobbyJoinName, HttpSession session) {
+	public String JoinGame(@RequestParam("lobbyJoinName") String lobbyJoinName, HttpSession session) {f
 		User current_user = (User) session.getAttribute("player");
 		
 		Game current_game = gameService.findByName(lobbyJoinName);
