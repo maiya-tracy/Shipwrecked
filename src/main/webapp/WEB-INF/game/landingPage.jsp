@@ -40,6 +40,7 @@
 	<div class="container">
 		<p>Landing Page</p>
 	<a href="/getShipwrecked">Create Game</a>
+	<a href="/newPlayer">add player</a>
 	</div>
 
 <div class="container">
