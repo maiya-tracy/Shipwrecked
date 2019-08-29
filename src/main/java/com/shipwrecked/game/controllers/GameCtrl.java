@@ -20,10 +20,14 @@ import com.shipwrecked.game.services.UserService;
 
 @Controller
 public class GameCtrl {
+	
 	@Autowired
 	GameService gameService;
 	@Autowired
 	UserService playerService;
+	
+	@GetMapping("/getShipwrecked")
+	public String createOrJoinPage() {
 	
 	@GetMapping("/")
 	public String landingPage() {
