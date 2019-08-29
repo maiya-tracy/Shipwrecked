@@ -33,9 +33,9 @@
 		<p>CreateOrJoinPage</p>
 		<div class="row">
 			<div class="col-sm-8">
-
+							<!-- Create Table  -->
 				<h4 class="page-header">Create A Game</h4>
-				<form:form action="/createGame/process" method="post"
+				<form:form action="/getShipwrecked/process" method="post"
 					modelAttribute="newGame" role="form">
 					<div class="form-group float-label-control">
 						<form:label path="lobbyName">Lobby Name:</form:label>
@@ -54,23 +54,25 @@
 		</div>
 	<div class="row">
 			<div class="col-sm-8">
-
+								<!-- JOIN TABLE  -->
 				<h4 class="page-header mt-5">Join a Game</h4>
-				<form:form action="/createGame/process" method="post"
-					modelAttribute="newGame" role="form">
+				<form action="/getShipwrecked/process/join" method="post">
+					
 					<div class="form-group float-label-control">
-						<form:label path="lobbyName">Lobby Name:</form:label>
-						<small><form:errors path="lobbyName" class="text-danger" /></small>
-						<form:input path="lobbyName" type="text" class="form-control"
+						<label for="lobbyJoinName">Lobby Name:</label>
+
+						<input name="lobbyJoinName" type="text" class="form-control"
 							placeholder="Lobby Name" />
 					</div>
+					
 					<div class="form-group float-label-control">
-						<form:label path="password">Password (Optional):</form:label>
-						<form:input path="password" type="password" class="form-control"
+						<label for="password">Password (Optional):</label>
+						<input name="password" type="password" class="form-control"
 							placeholder="Password Optional" />
 					</div>
+					
 					<input type="submit" class="btn btn-success"/>
-				</form:form>
+				</form>
 			</div>
 		</div>
 	</div>

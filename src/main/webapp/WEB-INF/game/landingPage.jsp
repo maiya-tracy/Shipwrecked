@@ -39,7 +39,7 @@
 <<<<<<< HEAD
 	<div class="container">
 		<p>Landing Page</p>
-	<a href="/createGamePage">Create Game</a>
+	<a href="/getShipwrecked">Create Game</a>
 	</div>
 =======
 <div class="container">
