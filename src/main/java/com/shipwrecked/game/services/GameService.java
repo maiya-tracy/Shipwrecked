@@ -26,4 +26,12 @@ public class GameService {
 			return null;
 		}
 	}
+	public Game findByName(String game_name) {
+		Optional<Game> optionalGame = gameRepository.findByLobbyName(game_name);
+		if (optionalGame.isPresent()) {
+			return optionalGame.get();
+		} else {
+			return null;
+		}
+	}
 }
