@@ -27,10 +27,7 @@ public class GameCtrl {
 	UserService playerService;
 	
 	
-	@GetMapping("/")
-	public String landingPage() {
-		return "game/landingPage.jsp";
-	}
+
 	
 	@GetMapping("/getShipwrecked")
 	public String createOrJoinPage(@ModelAttribute("newGame") Game game) {
