@@ -10,6 +10,7 @@ public class Player{
 	private boolean weather_protection;
 	private boolean animal_protection;
 	
+
 	public Player(String name) {
 		
 		this.name = name;
