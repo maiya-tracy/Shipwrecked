@@ -26,8 +26,6 @@ public class GameCtrl {
 	@Autowired
 	UserService playerService;
 	
-	@GetMapping("/getShipwrecked")
-	public String createOrJoinPage() {
 	
 	@GetMapping("/")
 	public String landingPage() {

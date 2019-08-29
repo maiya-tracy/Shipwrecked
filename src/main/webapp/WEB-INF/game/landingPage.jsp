@@ -30,18 +30,18 @@
 		background:#c4fbff;
 	}
 	.test{
-		background-image:url(<c:url value="/img/island3.png") />;
+		background-image:url(<c:url value="/img/island3.png" />);
 		width: 100%;
 		height: auto;
 	}
 </style>
 <body>
-<<<<<<< HEAD
+
 	<div class="container">
 		<p>Landing Page</p>
 	<a href="/getShipwrecked">Create Game</a>
 	</div>
-=======
+
 <div class="container">
 	<div id="header" class="container-fluid">
 		<img id="island" src=<c:url value="/img/island4.png"/>>
@@ -51,6 +51,5 @@
 	</div>
 	<div id="footer"></div>
 </div>
->>>>>>> eb558f9437e74288aa4ff8fdfbb22a76e9334c38
 </body>
 </html>
