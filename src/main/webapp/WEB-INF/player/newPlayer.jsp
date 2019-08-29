@@ -27,8 +27,21 @@
 
 <title>New Player</title>
 </head>
+
+<style>
+
+
+#ocean {
+        
+        background: rgb(24, 216, 227);
+        background: radial-gradient(circle, rgba(24, 216, 227, 1) 26%, rgba(71, 78, 196, 1) 100%);
+       /*  background-size: 100% 200px; */
+        height: 1000px;
+    }
+
+</style>
 <body>
-	<div class="container">
+	<div class="container-fluid" id="ocean">
 		<div class="row">
 			<div class="col-sm-8">
 
