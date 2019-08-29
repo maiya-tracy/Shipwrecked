@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
 public class GameCtrl {
-	@GetMapping("/")
-	public String landingPage() {
-		return "game/landingPage.jsp";
-	}
+//	@GetMapping("/")
+//	public String landingPage() {
+//		return "game/landingPage.jsp";
+//	}
 	@GetMapping("/getShipwrecked")
 	public String createOrJoinPage() {
 		return "game/createOrJoinPage.jsp";
