@@ -27,7 +27,7 @@ public class GameCtrl {
 	UserService playerService;
 
 	
-	@GetMapping("/")
+	@GetMapping("/notgood")
 	public String landingPage() {
 		return "game/landingPage.jsp";
 	}
