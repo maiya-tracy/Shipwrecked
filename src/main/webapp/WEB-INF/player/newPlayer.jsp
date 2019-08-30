@@ -65,9 +65,9 @@
 
 <body>
 	<div class="container-fluid" id="ocean">
-		<div class="row">
-			<div class="col-sm-8">
-				<h4 id="title" class="page-header text-light">Create a New
+		<div class="row text-center">
+			<div class="col-sm-3 addForm">
+				<h4 id="title" class="page-header">Create a New
 					Player</h4>
 				<form:form action="/newPlayer/process" method="post"
 					modelAttribute="newPlayer" role="form">
