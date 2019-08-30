@@ -1,8 +1,3 @@
-/**
- * 
- */
-
-
 class Deck {
     constructor(deck){
         this.deck = deck;
@@ -67,6 +62,7 @@ class Player {
 
 
 
+<<<<<<< HEAD
 $(document).ready(function(){
 	console.log("ready")
 
@@ -78,6 +74,8 @@ window.localStorage.setItem("Player1", "");
 var test = window.localStorage.getItem('forageDeck');
 console.log(test);
 
+=======
+>>>>>>> 3ad28375d08d9f5f2c992f4f0ac6530152e5b71c
 
 
 
