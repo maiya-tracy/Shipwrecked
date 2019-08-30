@@ -140,8 +140,8 @@
 						<form action="/getShipwrecked/process" method="post">
 
 							<div class="form-group float-label-control">
-								<label for="lobbyJoinName">Lobby Name:</label> <input
-									name="lobbyJoinName" type="text"
+								<label for="lobbyName">Lobby Name:</label> <input
+									name="lobbyName" type="text"
 									class="form-control text-center" placeholder="Lobby Name" />
 							</div>
 							<div class="form-group float-label-control">
