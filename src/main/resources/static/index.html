@@ -14,6 +14,12 @@
 <link
 	href="https://fonts.googleapis.com/css?family=Lacquer&display=swap"
 	rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$("#title").fadeIn(4000);
+	});
+</script>
 </head>
 <style>
 #wrapper {
@@ -21,7 +27,7 @@
 }
 
 #island {
-	background: url('../../img/island4.png') no-repeat;
+	background: url('../../img/island3.png') no-repeat;
 	background-size: auto 350px;
 	height: 300px;
 	width: 700px;
@@ -31,7 +37,7 @@
 
 #landingImg {
 	background: rgb(199, 227, 245);
-	background: linear-gradient(0deg, rgba(199, 227, 245, 1) 0%,
+	background: linear-gradient(0deg, rgba(199, 227, 245, 1) 10%,
 		rgba(84, 162, 223, 1) 100%);
 	/* background:#c4fbff; */
 	width: 100%;
@@ -53,6 +59,18 @@
 	border-bottom-right-radius: 7px;
 }
 
+#deadLady{
+	background: rgb(155,224,235);
+	background: radial-gradient(circle, rgba(155,224,235,1) 45%, rgba(130,220,224,1) 100%);
+	margin-left:160px;
+	margin-top:88px;
+	display:inline-block;
+	vertical-align:top;
+	padding:5px;
+	height:62px;
+	width:62px;
+}
+
 #headerDivider {
 	margin-top: 500px;
 }
@@ -72,6 +90,7 @@
 	background: -webkit-linear-gradient(#d4ba78, #786227);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
+	display:none;
 }
 
 #startGame {
@@ -94,6 +113,11 @@
 			<div id="landingImg">
 				<p id="title">Shipwrecked</p>
 				<div id="ocean">
+					<img src="https://media.giphy.com/media/cZOaBdcLaGBeo/giphy.gif" style="height:60px;width:60px;position:absolute;margin-top:40px;margin-left:15px;">
+					<img src="https://media.giphy.com/media/cZOaBdcLaGBeo/giphy.gif" style="height:40px;width:40px;position:absolute;margin-top:80px;margin-left:-15px;">
+					<div id="deadLady">
+						<img src="https://media.giphy.com/media/3o6ZsVwNtxmIaivd7O/giphy.gif" style="height:40px;width:40px;">
+					</div>
 					<a href="/newPlayer" class="btn btn-light" id="startGame">Start Game</a>
 				</div>
 				<div id="island"></div>

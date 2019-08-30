@@ -63,15 +63,15 @@ public class User {
 			boolean animal_protection) {
 		this.userName = userName;
 		this.game = game;
-		this.health = this.starting_health();
+		this.health = 3;
 		this.inventory = inventory;
 		this.starting_item = starting_item;
 		this.weather_protection = weather_protection;
 		this.animal_protection = animal_protection;
 	}
 	
-	private int starting_health() {
-		int random = (int) (Math.random()*3);
+	public int starting_health() {
+		int random = (int) Math.floor((Math.random()*3));
 		return 3+random;
 	}
 	
