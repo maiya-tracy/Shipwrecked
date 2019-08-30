@@ -30,6 +30,7 @@
 
 <title>New Player</title>
 </head>
+
 <style>
 .addForm {
 	margin: 30vh auto;
@@ -64,9 +65,8 @@
 
 <body>
 	<div class="container-fluid" id="ocean">
-		<div class="container pt-5 text-center ">
-			<div class="col-sm-5 addForm">
-
+		<div class="row">
+			<div class="col-sm-8">
 				<h4 id="title" class="page-header text-light">Create a New
 					Player</h4>
 				<form:form action="/newPlayer/process" method="post"

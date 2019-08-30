@@ -12,7 +12,7 @@ public class Player{
 	
 
 	public Player(String name) {
-		
+
 		this.name = name;
 		this.health = starting_health();
 		this.starting_item = new ArrayList<Object>();
