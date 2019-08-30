@@ -77,7 +77,7 @@
 						<form:input path="userName" type="text"
 							class="form-control text-center" placeholder="User Name" />
 					</div>
-					<input type="submit" class="btn btn-outline-info" />
+					<input type="submit" class="btn btn-info" />
 				</form:form>
 			</div>
 		</div>

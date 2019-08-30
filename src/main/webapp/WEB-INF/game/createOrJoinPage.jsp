@@ -23,7 +23,9 @@
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
 	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 	crossorigin="anonymous"></script>
-
+<link
+	href="https://fonts.googleapis.com/css?family=Lacquer&display=swap"
+	rel="stylesheet">
 
 <meta charset="ISO-8859-1">
 <style>
@@ -60,7 +62,6 @@
 .card-background {
 	background-color: transparent;
 	border-style: none;
-	
 }
 </style>
 
@@ -122,6 +123,7 @@
 
 			<div class="card card-background">
 				<div class="card-header border-bottom-0" id="headingOne">
+				
 					<h2>
 						<button class="btn btn-link" type="button" data-toggle="collapse"
 							data-target="#collapseOne" aria-expanded="true"
@@ -129,30 +131,32 @@
 							<h4 id="title" class="page-header">Create A Game</h4>
 						</button>
 					</h2>
+					
 				</div>
 
 				<div id="collapseOne" class="collapse show"
 					aria-labelledby="headingOne" data-parent="#accordionExample">
 					<div class="card-body col-sm-3 addForm">
-						<form action="/getShipwrecked/process/join" method="post">
+						<form action="/getShipwrecked/process" method="post">
 
 							<div class="form-group float-label-control">
 								<label for="lobbyJoinName">Lobby Name:</label> <input
-									name="lobbyJoinName" type="text" class="form-control text-center"
-									placeholder="Lobby Name" />
+									name="lobbyJoinName" type="text"
+									class="form-control text-center" placeholder="Lobby Name" />
 							</div>
 							<div class="form-group float-label-control">
 								<label for="password">Password (Optional):</label> <input
-									name="password" type="password" class="form-control text-center"
+									name="password" type="password"
+									class="form-control text-center"
 									placeholder="Password Optional" />
 							</div>
-							<input type="submit" class="btn btn-outline-info" />
+							<input type="submit" class="btn btn-info" />
 						</form>
 					</div>
 				</div>
 			</div>
 		</div>
-		
+
 		<div class="accordion container-fluid text-center p-0"
 			id="accordionExample">
 			<div class="card card-background">
@@ -172,17 +176,18 @@
 
 							<div class="form-group float-label-control">
 								<label for="lobbyJoinName">Lobby Name:</label> <input
-									name="lobbyJoinName" type="text" class="form-control text-center"
-									placeholder="Lobby Name" />
+									name="lobbyJoinName" type="text"
+									class="form-control text-center" placeholder="Lobby Name" />
 							</div>
 
 							<div class="form-group float-label-control">
 								<label for="password">Password (Optional):</label> <input
-									name="password" type="password" class="form-control text-center"
+									name="password" type="password"
+									class="form-control text-center"
 									placeholder="Password Optional" />
 							</div>
 
-							<input type="submit" class="btn btn-outline-info" />
+							<input type="submit" class="btn btn-info" />
 						</form>
 					</div>
 				</div>
