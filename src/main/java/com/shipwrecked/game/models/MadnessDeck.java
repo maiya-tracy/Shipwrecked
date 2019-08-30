@@ -31,7 +31,7 @@ public class MadnessDeck {
 		this.cards = cards;
 	}
 
-
+	
 	public void shuffle() {
 		Collections.shuffle(this.cards);
 	}
@@ -41,7 +41,7 @@ public class MadnessDeck {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public List<Madness> getCards() {
+	public List<Madness> getDeck() {
 		return cards;
 	}
 	public void setCards(List<Madness> cards) {

@@ -4,13 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
-//@Entity
-//@Table(name="players")
+@Entity
+@Table(name="players")
 public class Player{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,30 +22,49 @@ public class Player{
 	private String name;
 	private int health;
 	
+	@ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(
+        name = "forage_player", 
+        joinColumns = @JoinColumn(name = "player_id"), 
+        inverseJoinColumns = @JoinColumn(name = "forage_id")
+    )
 	private List<Forage> inventory;
-//	private ArrayList<W> starting_item;
+	
+
 	private boolean weather_protection;
 	private boolean animal_protection;
 	
-	public Player(String name) {
+	
+	public Player(String name, int health, List<Forage> inventory, boolean weather_protection,
+			boolean animal_protection) {
+
 		this.name = name;
-		this.health = (int) (Math.random()*3) + 3;
-//		this.starting_item = new ArrayList<Object>();
+		this.health = health;
+		this.inventory = inventory;
 		this.weather_protection = false;
 		this.animal_protection = false;
 	}
-	
-//	private int starting_health() {
-//		int random = (int) (Math.random()*3+1);
-//		return 3+random;
-//	}
-	
+
 	// PLAYER ACTIONS
 	public void dealCards(int heart, ForageDeck deck) {
 		for(int i = 0; i< heart; i++) {
 			this.inventory.add(deck.deal());
 			this.health--;
 		}
+	}
+	
+	
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public void setInventory(List<Forage> inventory) {
+		this.inventory = inventory;
 	}
 
 	public String getName() {

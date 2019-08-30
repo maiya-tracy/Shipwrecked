@@ -25,12 +25,12 @@ public class Madness {
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name="deck_id")
-    private Madness deck;
+    private MadnessDeck deck;
 	
 	
 
 	public Madness(String name, String description, String effect, String recovery_desc, int recovery, int steal_forage,
-			String image, Madness deck) {
+			String image, MadnessDeck deck) {
 		this.name = name;
 		this.description = description;
 		this.effect = effect;
@@ -43,11 +43,11 @@ public class Madness {
 	
 	
 
-	public Madness getDeck() {
+	public MadnessDeck getDeck() {
 		return deck;
 	}
 
-	public void setDeck(Madness deck) {
+	public void setDeck(MadnessDeck deck) {
 		this.deck = deck;
 	}
 

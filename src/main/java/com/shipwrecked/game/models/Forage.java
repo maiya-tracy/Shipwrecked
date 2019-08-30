@@ -1,5 +1,6 @@
 package com.shipwrecked.game.models;
 
+import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.Entity;
@@ -8,6 +9,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -23,12 +26,25 @@ public class Forage {
 	private String action;
 	private int repercussion;
 	private String image;
+	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name="deck_id")
     private ForageDeck deck;
 	
+	@ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(
+        name = "forage_player", 
+        joinColumns = @JoinColumn(name = "forage_id"), 
+        inverseJoinColumns = @JoinColumn(name = "player_id")
+    )     
+    private List<User> players;
+	
+	
+	
+	public Forage() {};
 
 	public Forage(String type, String face, String action, int repercussion, String image, ForageDeck deck) {
+
 		this.type = type;
 		this.face = face;
 		this.action = action;
@@ -55,8 +71,16 @@ public class Forage {
 	}
 
 
+	
 
 
+	public List<User> getPlayers() {
+		return players;
+	}
+
+	public void setPlayers(List<User> players) {
+		this.players = players;
+	}
 
 	public void setId(Long id) {
 		this.id = id;
