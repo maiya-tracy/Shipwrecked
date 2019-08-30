@@ -35,7 +35,6 @@
 	})	
 </script>
 <style>
-
 	#wrapper{
 		background-image:url("../../img/parchment.jpg");
 		background-repeat:no-repeat;
@@ -84,6 +83,17 @@
 		height:50px;
 		width:50px;
 		margin-top:55px;
+	}
+	.playerCards{
+		background:#63A118;
+		height:75px;
+		width:45px;
+		border-radius:7px;
+		border:solid 2px black;
+		display:inline-block;
+	}
+	#player1Wrapper{
+		padding-left:20px;
 	}
 	#player4Wrapper{
 		margin-top:100px;
@@ -138,9 +148,18 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div id="player1Wrapper" class="col-3" style="height: 120px;">
-				<h1 class="text-center m-0"><c:out value="${current_game.players.get(0).userName}"/></h1>
+				<div style="display:inline-block">
+					<h1 class="text-center m-0" style="display:inline-block;"><c:out value="${current_game.players.get(0).userName}"/></h1>
 				<div class="text-center text-danger m-0">
-					<i class="fas fa-heart mr-1"></i><i class="fas fa-heart mr-1"></i><i class="fas fa-heart mr-1"></i><i class="fas fa-heart mr-1"></i><i class="fas fa-heart mr-1"></i><i class="fas fa-heart mr-1"></i>
+					<div style="display:inline-block">
+						<c:forEach begin="0" end="${current_game.players.get(0).health}" varStatus="loop">
+							<i class="fas fa-heart mr-1"></i>
+						</c:forEach>
+					</div>
+				</div>
+				</div>
+				<div class="playerCards" style="display:inline-block;text-align:center">
+					<img src="../../img/forge.png" style="height:15px;width:15px;margin:auto;margin-top:28px">
 				</div>
 			</div>
 			<div class="col-6" style="margin-top:-40px">

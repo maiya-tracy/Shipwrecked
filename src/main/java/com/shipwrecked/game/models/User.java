@@ -1,5 +1,6 @@
 package com.shipwrecked.game.models;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -37,6 +38,12 @@ public class User {
     @JoinColumn(name="game_id")
     private Game game;
 	
+	private int health;
+	private ArrayList<Object> inventory;
+	private ArrayList<Object> starting_item;
+	private boolean weather_protection;
+	private boolean animal_protection;
+	
     @PrePersist
     protected void onCreate(){
         this.createdAt = new Date();
@@ -49,12 +56,25 @@ public class User {
 
 	public User() {}
 
-	public User(String userName, Game game) {
-
+	
+	
+	public User(String userName, Game game,
+			ArrayList<Object> inventory, ArrayList<Object> starting_item, boolean weather_protection,
+			boolean animal_protection) {
 		this.userName = userName;
 		this.game = game;
+		this.health = this.starting_health();
+		this.inventory = inventory;
+		this.starting_item = starting_item;
+		this.weather_protection = weather_protection;
+		this.animal_protection = animal_protection;
 	}
-
+	
+	private int starting_health() {
+		int random = (int) (Math.random()*3);
+		return 3+random;
+	}
+	
 	public Long getId() {
 		return id;
 	}
@@ -93,6 +113,46 @@ public class User {
 
 	public void setGame(Game game) {
 		this.game = game;
+	}
+
+	public int getHealth() {
+		return health;
+	}
+
+	public void setHealth(int health) {
+		this.health = health;
+	}
+
+	public ArrayList<Object> getInventory() {
+		return inventory;
+	}
+
+	public void setInventory(ArrayList<Object> inventory) {
+		this.inventory = inventory;
+	}
+
+	public ArrayList<Object> getStarting_item() {
+		return starting_item;
+	}
+
+	public void setStarting_item(ArrayList<Object> starting_item) {
+		this.starting_item = starting_item;
+	}
+
+	public boolean isWeather_protection() {
+		return weather_protection;
+	}
+
+	public void setWeather_protection(boolean weather_protection) {
+		this.weather_protection = weather_protection;
+	}
+
+	public boolean isAnimal_protection() {
+		return animal_protection;
+	}
+
+	public void setAnimal_protection(boolean animal_protection) {
+		this.animal_protection = animal_protection;
 	}
 	
 }
