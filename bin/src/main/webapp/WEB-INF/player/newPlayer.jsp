@@ -24,60 +24,24 @@
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
 	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 	crossorigin="anonymous"></script>
-<link
-	href="https://fonts.googleapis.com/css?family=Lacquer&display=swap"
-	rel="stylesheet">
 
 <title>New Player</title>
 </head>
-<style>
-.addForm {
-	margin: 30vh auto;
-}
-
-#wrapper {
-	background-image: url("../../img/parchment.jpg");
-	background-repeat: no-repeat;
-	background-size: 100% 100%;
-	width: 100 vw;
-	height: 100vh;
-}
-
-#ocean {
-	background: rgb(4, 0, 71);
-	background: linear-gradient(0deg, rgba(4, 0, 71, 1) 0%,
-		rgba(16, 16, 159, 1) 35%, rgba(186, 239, 250, 1) 100%);
-	background-size: 100% 100%;
-	height: 100vh;
-	width: 100vw;
-}
-
-#title {
-	font-family: 'Lacquer', sans-serif;
-	font-size: 40px;
-	/* color:#8a5421; */
-	background: -webkit-linear-gradient(#d4ba78, #786227);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-}
-</style>
-
 <body>
-	<div class="container-fluid" id="ocean">
-		<div class="container pt-5 text-center ">
-			<div class="col-sm-5 addForm">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-8">
 
-				<h4 id="title" class="page-header text-light">Create a New
-					Player</h4>
+				<h4 class="page-header">Create A player</h4>
 				<form:form action="/newPlayer/process" method="post"
 					modelAttribute="newPlayer" role="form">
 					<div class="form-group float-label-control">
-						<form:label path="userName"></form:label>
+						<form:label path="userName">User Name:</form:label>
 						<small><form:errors path="userName" class="text-danger" /></small>
-						<form:input path="userName" type="text"
-							class="form-control text-center" placeholder="User Name" />
+						<form:input path="userName" type="text" class="form-control"
+							placeholder="UserName" />
 					</div>
-					<input type="submit" class="btn btn-outline-info" />
+					<input type="submit" class="btn btn-success" />
 				</form:form>
 			</div>
 		</div>

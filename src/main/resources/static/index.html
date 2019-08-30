@@ -1,143 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Shipwrecked</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Lacquer&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Shipwrecked</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link
+	href="https://fonts.googleapis.com/css?family=Lacquer&display=swap"
+	rel="stylesheet">
 </head>
 <style>
-    #wrapper{
-    }
-    #island{
-        background:url('/img/island4.png') no-repeat;
-        background-size:auto 350px;
-        height:300px;
-        width:700px;
-        margin:auto;
-        margin-top:-450px;
-    }
-    #landingImg{
-        background: rgb(199,227,245);
-        background: linear-gradient(0deg, rgba(199,227,245,1) 0%, rgba(84,162,223,1) 100%);
-        /* background:#c4fbff; */
-        width:100%;
-        height:398px;
-        text-align:center;
-        margin-top:-30px;
-        padding-top:100px;
-        border-radius:7px;
-    }
-    #ocean{
-        margin-top:200px;
-        background: rgb(4,230,242);
-        background: radial-gradient(circle, rgba(4,230,242,1) 56%, rgba(0,81,217,1) 100%);
-        background-size:100% 200px;
-        height:300px;
-        border-bottom-left-radius:7px;
-        border-bottom-right-radius:7px;
-    }
-    #headerDivider{
-        margin-top:500px;
-    }
-    .jumbotron{
-        height:680px;
-    }
-    #title{
-        font-family: 'Lacquer', sans-serif;
-        float:left;
-        font-size:100px;
-        text-align:left;
-        margin-left:100px;
-        /* color:#8a5421; */
-        margin-top:-100px;
-        background: -webkit-linear-gradient(#d4ba78, #786227);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-    #startGame{
-        margin-top:170px;
-        color:#786227;
-    }
+#wrapper {
+	
+}
+
+#island {
+	background: url('/img/island4.png') no-repeat;
+	background-size: auto 350px;
+	height: 300px;
+	width: 700px;
+	margin: auto;
+	margin-top: -450px;
+}
+
+#landingImg {
+	background: rgb(199, 227, 245);
+	background: linear-gradient(0deg, rgba(199, 227, 245, 1) 0%,
+		rgba(84, 162, 223, 1) 100%);
+	/* background:#c4fbff; */
+	width: 100%;
+	height: 398px;
+	text-align: center;
+	margin-top: -30px;
+	padding-top: 100px;
+	border-radius: 7px;
+}
+
+#ocean {
+	margin-top: 200px;
+	background: rgb(4, 230, 242);
+	background: radial-gradient(circle, rgba(4, 230, 242, 1) 56%,
+		rgba(0, 81, 217, 1) 100%);
+	background-size: 100% 200px;
+	height: 300px;
+	border-bottom-left-radius: 7px;
+	border-bottom-right-radius: 7px;
+}
+
+#headerDivider {
+	margin-top: 500px;
+}
+
+.jumbotron {
+	height: 680px;
+}
+
+#title {
+	font-family: 'Lacquer', sans-serif;
+	float: left;
+	font-size: 100px;
+	text-align: left;
+	margin-left: 100px;
+	/* color:#8a5421; */
+	margin-top: -100px;
+	background: -webkit-linear-gradient(#d4ba78, #786227);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+#startGame {
+	margin-top: 170px;
+	color: #786227;
+}
 </style>
 <body>
-    <div id='wrapper' class="container-fluid">
-        <div class="jumbotron">
-            <div id="landingImg">
-                <p id="title">Shipwrecked</p>
-                <div id="ocean">
-                	<form action="/newPlayer">
-                    	<button type="submit" id="startGame" class="btn btn-light">Start Game</button>
-                    </form>
-                </div>
-                <div id="island"></div>
-            </div>
-        </div>
-        <div class="jumbotron" style="text-align:center;height:1000px">
-            <h1>About The Game</h1>
-            <div style="background:blue;height:200px;width:700px;margin:auto"></div>
-            <hr class="my-4">
-            <h1>The Team</h1>
-            <div>
-                <div class="card" style="width: 18rem;display:inline-block">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-                <div class="card" style="width: 18rem;display:inline-block">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-                <div class="card" style="width: 18rem;display:inline-block">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <div class="card" style="width: 18rem;display:inline-block">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-                <div class="card" style="width: 18rem;display:inline-block">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-                <div class="card" style="width: 18rem;display:inline-block">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <div class="card" style="width: 18rem;display:inline-block">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-                <div class="card" style="width: 18rem;display:inline-block">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<div id='wrapper' class="container-fluid">
+		<div class="jumbotron">
+			<div id="landingImg">
+				<p id="title">Shipwrecked</p>
+				<div id="ocean">
+					<form action="/newPlayer">
+						<button type="submit" id="startGame" class="btn btn-light">Start
+							Game</button>
+					</form>
+				</div>
+				<div id="island"></div>
+			</div>
+		</div>
+		<div class="jumbotron" style="text-align: center; height: 1000px">
+			<h1>About The Game</h1>
+			<div
+				style="background: blue; height: 200px; width: 700px; margin: auto"></div>
+			<hr class="my-4">
+			<h1>The Team</h1>
+			<div>
+				<div class="card" style="width: 18rem; display: inline-block">
+					<img src="..." class="card-img-top" alt="...">
+					<div class="card-body">
+						<p class="card-text">Cameron Lee</p>
+						<p class="card-text">Some quick example text to build on the
+							card title and make up the bulk of the card's content.</p>
+					</div>
+				</div>
+				<div class="card" style="width: 18rem; display: inline-block">
+					<img src="..." class="card-img-top" alt="...">
+					<div class="card-body">
+						<p class="card-text">Cean Tolentino</p>
+						<p class="card-text">Some quick example text to build on the
+							card title and make up the bulk of the card's content.</p>
+					</div>
+				</div>
+				<div class="card" style="width: 18rem; display: inline-block">
+					<img src="..." class="card-img-top" alt="...">
+					<div class="card-body">
+						<p class="card-text">Justin Duong</p>
+						<p class="card-text">Some quick example text to build on the
+							card title and make up the bulk of the card's content.</p>
+					</div>
+				</div>
+			</div>
+			<div>
+				<div class="card" style="width: 18rem; display: inline-block">
+					<img src="..." class="card-img-top" alt="...">
+					<div class="card-body">
+						<p class="card-text">Kaycee Weberski</p>
+						<p class="card-text">Some quick example text to build on the
+							card title and make up the bulk of the card's content.</p>
+					</div>
+				</div>
+				<div class="card" style="width: 18rem; display: inline-block">
+					<img src="..." class="card-img-top" alt="...">
+					<div class="card-body">
+						<p class="card-text">Kevin Ly</p>
+						<p class="card-text">Some quick example text to build on the
+							card title and make up the bulk of the card's content.</p>
+					</div>
+				</div>
+				<div class="card" style="width: 18rem; display: inline-block">
+					<img src="..." class="card-img-top" alt="...">
+					<div class="card-body">
+						<p class="card-text">Maiya Tracy</p>
+						<p class="card-text">Some quick example text to build on the
+							card title and make up the bulk of the card's content.</p>
+					</div>
+				</div>
+			</div>
+			<div>
+				<div class="card" style="width: 18rem; display: inline-block">
+					<img src="..." class="card-img-top" alt="...">
+					<div class="card-body">
+						<p class="card-text">Nikhil Cummings</p>
+						<p class="card-text">Some quick example text to build on the
+							card title and make up the bulk of the card's content.</p>
+					</div>
+				</div>
+				<div class="card" style="width: 18rem; display: inline-block">
+					<img src="..." class="card-img-top" alt="...">
+					<div class="card-body">
+						<p class="card-text">Shawn Nunoo</p>
+						<p class="card-text">Some quick example text to build on the
+							card title and make up the bulk of the card's content.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
 </body>
 </html>

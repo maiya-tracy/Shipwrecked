@@ -9,14 +9,12 @@
 		<version>2.1.7.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-
 	<groupId>com.shipwrecked.game</groupId>
 	<artifactId>shipwrecked</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>shipwrecked</name>
 	<description>Shipwrecked Game Project</description>
-
 
 	<properties>
 		<java.version>1.8</java.version>
