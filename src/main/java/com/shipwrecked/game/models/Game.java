@@ -52,9 +52,15 @@ public class Game {
     }
     
     
-    
-//     @OneToOne(mappedBy="game", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
-//      private ForageDeck forageDeck;
+     @OneToOne(mappedBy="game", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
+     private ForageDeck forageDeck;
+     
+     @OneToOne(mappedBy="game", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
+     private NightDeck nightDeck;
+     
+     @OneToOne(mappedBy="game", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
+     private MadnessDeck madnessDeck;
+
     
     
     

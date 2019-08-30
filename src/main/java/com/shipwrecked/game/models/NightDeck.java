@@ -8,7 +8,9 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -20,6 +22,14 @@ public class NightDeck {
 	
 	@OneToMany(mappedBy="deck", fetch = FetchType.LAZY)
 	private List<Night> cards;
+	
+	
+	@OneToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="game_id")
+	private Game game;
+	
+	
+	
 	
 	public NightDeck() {
 		
