@@ -31,6 +31,6 @@ public class UserCtrl {
 		}
 		User p = playerService.createPlayer(player);
 		session.setAttribute("player", p);
-		return"redirect:/createGamePage";
+		return"redirect:/getShipwrecked";
 	}
 }
