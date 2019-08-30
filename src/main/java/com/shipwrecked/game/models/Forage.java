@@ -63,9 +63,6 @@ public class Forage {
 	}
 
 
-
-
-
 	public String getType() {
 		return type;
 	}
@@ -114,5 +111,19 @@ public class Forage {
 	public void setImage(String image) {
 		this.image = image;
 	}
+
+
+	public ForageDeck getDeck() {
+		return deck;
+	}
+
+
+	public void setDeck(ForageDeck deck) {
+		this.deck = deck;
+	}
 	
+
 }
+
+
+
