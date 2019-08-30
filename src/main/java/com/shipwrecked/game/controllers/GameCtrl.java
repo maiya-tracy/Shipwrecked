@@ -37,12 +37,8 @@ public class GameCtrl {
 		} else {
 			User current_user = (User) session.getAttribute("player");
 			Game new_game = gameService.createGame(game);
-			if (new_game.getPlayers().size() >= 6) {
-				return "redirect:/getShipwrecked/";
-			} else {
-				this.AddPlayerToGame(current_user.getId(), new_game.getId(), session);
-				return "redirect:/getShipwrecked/" + new_game.getId();
-			}
+			this.AddPlayerToGame(current_user.getId(), new_game.getId(), session);
+			return "redirect:/getShipwrecked/" + new_game.getId();
 		}
 	}
 
@@ -76,19 +72,17 @@ public class GameCtrl {
 	}
 
 	@GetMapping("/getShipwrecked/{game_id}/go")
-	public String inGame(@PathVariable("game_id") Long game_id) {
+	public String inGame(@PathVariable("game_id") Long game_id, Model model, HttpSession session) {
+		Game current_game = gameService.findById(game_id);
+		User current_user = (User) session.getAttribute("player");
+		model.addAttribute("current_game", current_game);
+		model.addAttribute("current_player", current_user);
 		return "game/inGame.jsp";
 	}
-	
-	
+
 	@GetMapping("/actionsTest")
 	public String actionsTest() {
 		return "game/testCardDraw.jsp";
 	}
-	
-	
-	
-	
-	
-	
+
 }
