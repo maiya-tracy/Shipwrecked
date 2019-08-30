@@ -10,27 +10,37 @@
 </head>
 <body>
 
+<div id="click">hello</div>
 <script type="text/javascript" src="js/cardActionsTest.js"></script>
 
 
+<<<<<<< HEAD
+=======
 <script>
 
 
 $(document).ready(function(){
 	console.log("ready")
 
+	$( "#click" ).click(function( event ) {
 	$.getJSON('../json/forageDeck.json', function(data) {
 			var hand = [];
-			hand.push(data[0]);
-			hand.push(data[1]);
-			hand.push(data[2]);
-			hand.push(data[3]);			
-			console.log("hello");
+			var nextCard = 0;
+			hand.push(data[nextCard]);
+			nextCard++;		
 			console.log(hand);
+			localStorage.setItem('hello','goodbye');
+			var obj = localStorage.getItem('hello');
+			console.log(obj);
 		})
-	})
+	})	
+
+		var	print = window.localStorage.getItem("hand");
+	console.log(print);
+});
 </script>
 
+>>>>>>> 3ad28375d08d9f5f2c992f4f0ac6530152e5b71c
 
 
 </body>

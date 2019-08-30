@@ -10,6 +10,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+<meta http-equiv="refresh" content="5">
 <title>Shipwrecked | Lobby</title>
 
 <link rel="stylesheet"
@@ -21,18 +22,20 @@
 
 <style>
 #ocean {
+
         
         background: rgb(24, 216, 227);
         background: radial-gradient(circle, rgba(24, 216, 227, 1) 26%, rgba(71, 78, 196, 1) 100%);
        /*  background-size: 100% 200px; */
         height: 1000px;
     }
+
 </style>
 
 <body>
 	<div class="container-fluid pt-5" id="ocean">
 		<div class="container mt-5 mb-5 pt-5 text-center">
-			<h1>Prepare for survival <c:out value="${current_game.lobbyName}" />!</h1>
+			<h1 class="text-light">Prepare for survival <c:out value="${current_game.lobbyName}" />!</h1>
 
 
 			
@@ -44,8 +47,8 @@
 
 
 			<div
-				class="row border border-dark rounded mt-5 mb-5 shadow-lg table-striped table-info">
-				<table class="table table-borderless table-hover text-center">
+				class="row border border-dark rounded mt-5 mb-5 shadow-lg table-striped">
+				<table class="table table-borderless table-hover text-center text-light">
 					<thead>
 						<tr>
 							<th scope="col"><h3>Player</h3></th>
@@ -58,9 +61,8 @@
 						<c:forEach items="${ current_game.players }" var="player"
 							varStatus="loop">
 
-							<tr class="table">
-							
-									<th scope="row";"><c:out value="${loop.index + 1 }" /></th>
+							<tr class="table text-light">
+									<th scope="row"><c:out value="${loop.index + 1 }" /></th>
 									<td>Icon</td>
 									<td><c:out value="${player.userName}" /></td>
 							</tr>
@@ -69,7 +71,7 @@
 					</tbody>
 				</table>
 			</div>
-			<a href="###" class="btn btn-success"><h2 class="pl-5 pr-5">Start</h2></a>
+			<a href="/getShipwrecked/${current_game.id }/go" class="btn btn-outline-info"><h2 class="pl-5 pr-5">Start</h2></a>
 		</div>
 	</div>
 
