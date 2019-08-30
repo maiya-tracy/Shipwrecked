@@ -22,7 +22,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Entity
 @Table(name = "games")
 public class Game {
-	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -38,25 +37,29 @@ public class Game {
 
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date updatedAt;
-
+	
 	@OneToMany(mappedBy = "game", fetch = FetchType.LAZY)
 	private List<User> players;
-
+	
 	@PrePersist
-	protected void onCreate() {
-		this.createdAt = new Date();
-	}
+    protected void onCreate(){
+        this.createdAt = new Date();
+    }
+    
+    @PreUpdate
+    protected void onUpdate(){
+        this.updatedAt = new Date();
+    }
+    
+    
+    
+      @OneToOne(mappedBy="game", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
+      private ForageDeck forageDeck;
+    
+    
+    
 
-	@PreUpdate
-	protected void onUpdate() {
-		this.updatedAt = new Date();
-	}
-
-	@OneToOne(mappedBy = "game", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	private ForageDeck forageDeck;
-
-	public Game() {
-	}
+	public Game() {}
 
 	public Game(String lobbyName, String password, List<User> players) {
 		super();
@@ -112,5 +115,6 @@ public class Game {
 	public void setPlayers(List<User> players) {
 		this.players = players;
 	}
-
+	
+	
 }
