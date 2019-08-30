@@ -1,8 +1,3 @@
-/**
- * 
- */
-
-
 class Deck {
     constructor(deck){
         this.deck = deck;
@@ -65,16 +60,6 @@ class Player {
 
 }
 
-
-
-$.ajax({
-	url: '/json/forageDeck.json',
-	dataType: 'json',
-	success: function(data) {
-		console.log("hello");
-		var hand = [];
-		hand.push(data[0]);
-	}})
 
 
 
