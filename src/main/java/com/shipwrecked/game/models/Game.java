@@ -3,6 +3,7 @@ package com.shipwrecked.game.models;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -10,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
@@ -20,6 +22,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Entity
 @Table(name = "games")
 public class Game {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -35,21 +38,25 @@ public class Game {
 
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date updatedAt;
-	
+
 	@OneToMany(mappedBy = "game", fetch = FetchType.LAZY)
 	private List<User> players;
-	
-	@PrePersist
-    protected void onCreate(){
-        this.createdAt = new Date();
-    }
-    
-    @PreUpdate
-    protected void onUpdate(){
-        this.updatedAt = new Date();
-    }
 
-	public Game() {}
+	@PrePersist
+	protected void onCreate() {
+		this.createdAt = new Date();
+	}
+
+	@PreUpdate
+	protected void onUpdate() {
+		this.updatedAt = new Date();
+	}
+
+	@OneToOne(mappedBy = "game", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	private ForageDeck forageDeck;
+
+	public Game() {
+	}
 
 	public Game(String lobbyName, String password, List<User> players) {
 		super();
@@ -105,6 +112,5 @@ public class Game {
 	public void setPlayers(List<User> players) {
 		this.players = players;
 	}
-	
-	
+
 }
