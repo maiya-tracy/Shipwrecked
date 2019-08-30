@@ -28,15 +28,19 @@
 		$(".card").click(function(){
 			  $(this).animate({top: '350px'},1000);
 			  $(this).animate({top: '0px'},0);
-			  $("#forageCardStack").addClass("shadow");
-			  $("#forageCardStack").removeClass("shadow");
+			  $("#card2").fadeIn(4000);
 		});
+		$("#madnessCard").click(
+				function(){$("#card3").fadeIn(4000)});
+		
 		$(".card").mousedown(
 			function(){$(this).addClass("shadowInset")}
 		)
 		$(".card").mouseup(
 			function(){$(this).removeClass("shadowInset")}
 		)
+		
+
 	})	
 
 </script>
@@ -119,6 +123,13 @@
 		margin-left:-20px;
 		margin-top:-110px;
 	}
+	#player1Cards{
+		height:80%;
+		width:83%;
+	}
+	.cardFront{
+	
+	}
 	#fire{
 		margin-top:70px;
 	}
@@ -129,6 +140,8 @@
 		height:240px;
 		width:1000px;
 		margin:auto;
+		padding-top:35px;
+		padding-left:140px;
 	}
 	.glow{
 		box-shadow:0px 0px 150px 50px yellow;
@@ -306,7 +319,29 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div id="cardBox">
-				<div id="player1Cards"></div>
+				<div id="player1Cards" class="row">
+					<div id="card1" class="col-2 ml-2" style="padding:0;display:inline-block;vertical-align:top;background:#6e4c21;color:white;height:100%;border-radius:7px;text-align:center;border:solid 2px black;">
+				    	<div class="card-header" style="margin-top:-8px;height:40px;">Pineapple</div>
+				    	<img src="../../img/pineapple.png" class="card-img-top" alt="..." style="height:30%;width:40%;margin:auto;margin-top:10px;">
+  						<div class="card-body">
+    						<p class="card-text" style="font-size:10px;margin-top:-17px">Restores 3 hearts when consumed. No sharing.</p>
+  						</div>
+					</div>
+					<div id="card2" class="col-2 ml-1" style="display:inline-block;vertical-align:top;background:#d6d0b0;height:100%;width:17%;border-radius:7px;text-align:center;border:solid 2px black;display:none;">
+				    	<div class="card-header" style="margin-top:-8px;height:40px;">Wood</div>
+				    	<img src="../../img/wood.png" class="card-img-top" alt="..." style="height:20%;width:30%;margin:auto;margin-top:25px;">
+  						<div class="card-body">
+    						<p class="card-text" style="font-size:10px">Crafting material.</p>
+  						</div>
+					</div>
+					<div id="card3" class="col-2 ml-1" style="display:inline-block;vertical-align:top;background:#d6d0b0;height:100%;width:17%;border-radius:7px;text-align:center;border:solid 2px black;display:none;">
+				    	<div class="card-header" style="margin-top:-8px;height:40px;margin-left:-7px">Poisoned</div>
+				    	<img src="../../img/terror.png" class="card-img-top" alt="..." style="height:20%;width:30%;margin:auto;margin-top:25px;">
+  						<div class="card-body">
+    						<p class="card-text" style="font-size:10px;margin-top:-17px">Bad mushrooms! Lose 2 hearts.</p>
+  						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

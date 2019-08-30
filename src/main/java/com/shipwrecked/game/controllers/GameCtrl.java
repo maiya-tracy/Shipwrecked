@@ -61,6 +61,7 @@ public class GameCtrl {
 	public String JoinGame(@RequestParam("lobbyJoinName") String lobbyJoinName, HttpSession session) {
 		User current_user = (User) session.getAttribute("player");
 		Game current_game = gameService.findByName(lobbyJoinName);
+		System.out.println(current_game);
 		if (current_game.getPlayers().size() >= 6) {
 			return "redirect:/getShipwrecked/";
 		} else {
@@ -99,16 +100,6 @@ public class GameCtrl {
 
 	@GetMapping("/actionsTest")
 	public String actionsTest() {
-
-		// PUSH THE CARDS ON THIS ROUTE 
-		ForageDeck forageDeck = deckService.getForageDeck(1L);
-		System.out.println(forageDeck.getDeck());
-		
-		User newUser = new User("Cean");
-		playerService.createPlayer(newUser);
-		
-
-		
 		return "game/testCardDraw.jsp";
 	}
 
