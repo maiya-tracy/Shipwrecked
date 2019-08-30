@@ -32,9 +32,6 @@
 		$(".card").mouseup(
 			function(){$(this).removeClass("shadowInset")}
 		)
-		$("#phaser").click(function(){
-			  $("#blackout").toggle();
-		});
 	})	
 </script>
 <style>
@@ -141,7 +138,7 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div id="player1Wrapper" class="col-3" style="height: 120px;">
-				<h1 class="text-center m-0">Player 1</h1>
+				<h1 class="text-center m-0"><c:out value="${current_game.players.get(0).userName}"/></h1>
 				<div class="text-center text-danger m-0">
 					<i class="fas fa-heart mr-1"></i><i class="fas fa-heart mr-1"></i><i class="fas fa-heart mr-1"></i><i class="fas fa-heart mr-1"></i><i class="fas fa-heart mr-1"></i><i class="fas fa-heart mr-1"></i>
 				</div>
@@ -237,7 +234,7 @@
 			</div>
 		</div>
 	</div>
-	<div id="blackout"></div>
+	
 </div>
 </body>
 </html>
