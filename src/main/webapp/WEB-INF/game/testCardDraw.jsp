@@ -14,6 +14,8 @@
 <script type="text/javascript" src="js/cardActionsTest.js"></script>
 
 
+<<<<<<< HEAD
+=======
 <script>
 
 
@@ -38,6 +40,7 @@ $(document).ready(function(){
 });
 </script>
 
+>>>>>>> 3ad28375d08d9f5f2c992f4f0ac6530152e5b71c
 
 
 </body>

@@ -15,7 +15,6 @@ public class UserService {
 	
 	public User createPlayer(User player) {
 		// TODO Auto-generated method stub
-		player.setHealth(player.starting_health());
 		return playerRepository.save(player);
 	}
 	public User findById(Long id) {

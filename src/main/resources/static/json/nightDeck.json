@@ -93,5 +93,5 @@
                        "destroy_shelter": true, 
                        "lose_forage": true }] , 
      "negates_with":false,
-     "image": "gale.png"},
+     "image": "gale.png"}
 ]
