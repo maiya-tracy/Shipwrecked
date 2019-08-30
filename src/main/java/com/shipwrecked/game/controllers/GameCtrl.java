@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.shipwrecked.game.models.Game;
+import com.shipwrecked.game.models.MadnessDeck;
 import com.shipwrecked.game.models.User;
+import com.shipwrecked.game.services.DeckService;
 import com.shipwrecked.game.services.GameService;
 import com.shipwrecked.game.services.UserService;
 
@@ -25,7 +27,8 @@ public class GameCtrl {
 	GameService gameService;
 	@Autowired
 	UserService playerService;
-
+	@Autowired
+	DeckService deckService;
 
 	@GetMapping("/getShipwrecked")
 	public String createOrJoinPage(@ModelAttribute("newGame") Game game) {
@@ -65,6 +68,8 @@ public class GameCtrl {
 	public String lobby(@PathVariable("game_id") Long game_id, Model model, HttpSession session) {
 		Game current_game = gameService.findById(game_id);
 		User current_user = (User) session.getAttribute("player");
+		
+
 		model.addAttribute("current_game", current_game);
 		model.addAttribute("current_player", current_user);
 		return "game/lobby.jsp";
@@ -77,6 +82,14 @@ public class GameCtrl {
 	
 	@GetMapping("/actionsTest")
 	public String actionsTest() {
+
+		// PUSH THE CARDS ON THIS ROUTE 
+		
+
+		
+		
+
+		
 		return "game/testCardDraw.jsp";
 	}
 	

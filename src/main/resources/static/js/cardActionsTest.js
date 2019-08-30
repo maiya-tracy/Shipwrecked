@@ -6,7 +6,7 @@
 class Deck {
     constructor(deck){
         this.deck = deck;
-        this.shuffle;
+        this.shuffle();
     }
 
     shuffle() { // shuffles deck into random order
@@ -67,15 +67,16 @@ class Player {
 
 
 
-$.ajax({
-	url: '/json/forageDeck.json',
-	dataType: 'json',
-	success: function(data) {
-		console.log("hello");
-		var hand = [];
-		hand.push(data[0]);
-	}})
+$(document).ready(function(){
+	console.log("ready")
 
+	$.get('/js/forageDeck.js', function(data) {
+			window.localStorage.setItem('forageDeck', JSON.parse(data));
+		})
+	})
+window.localStorage.setItem("Player1", "");
+var test = window.localStorage.getItem('forageDeck');
+console.log(test);
 
 
 
