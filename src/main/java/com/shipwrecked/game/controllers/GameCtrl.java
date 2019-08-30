@@ -29,7 +29,18 @@ public class GameCtrl {
 	public String createOrJoinPage(@ModelAttribute("newGame") Game game) {
 		return "game/createOrJoinPage.jsp";
 	}
-
+	
+	@GetMapping("/getShipwrecked2")
+	public static String test() {
+		return "game/createOrJoinPage.jsp";
+	}
+	
+	@GetMapping("/getShipwrecked3")
+	public static void test2() {
+		ThreadController myThread = new ThreadController();
+		myThread.run();
+	}
+	
 	@PostMapping("/getShipwrecked/process")
 	public String createAndJoinGame(@ModelAttribute("newGame") Game game, BindingResult results, HttpSession session) {
 		if (results.hasErrors()) {
