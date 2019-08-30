@@ -79,4 +79,16 @@ public class GameCtrl {
 	public String inGame(@PathVariable("game_id") Long game_id) {
 		return "game/inGame.jsp";
 	}
+	
+	
+	@GetMapping("/actionsTest")
+	public String actionsTest() {
+		return "game/testCardDraw.jsp";
+	}
+	
+	
+	
+	
+	
+	
 }

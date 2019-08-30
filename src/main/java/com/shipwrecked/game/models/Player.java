@@ -10,7 +10,7 @@ public class Player{
 	private boolean weather_protection;
 	private boolean animal_protection;
 	
-	public Player(ArrayList<Object> starting_item, String name) {
+	public Player(String name) {
 		this.name = name;
 		this.health = starting_health();
 		this.starting_item = new ArrayList<Object>();
