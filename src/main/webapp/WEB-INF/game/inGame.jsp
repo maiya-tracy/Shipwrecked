@@ -81,7 +81,7 @@
 	.card{
 		height:170px;
 		width:110px;
-		box-shadow:25px 25px 50px 30px black;
+		box-shadow:25px 25px 50px 25px black;
 		border-radius:7px;
 		border:solid 2px black;
 	}
@@ -97,16 +97,18 @@
 		border-radius:7px;
 		border:solid 2px black;
 		display:inline-block;
+		margin-bottom:20px;
 	}
 	#player1Wrapper{
 		padding-left:20px;
 	}
 	#player4Wrapper{
-		margin-top:100px;
 	}
 	#player6Wrapper{
-		margin-right:-20px;
-		margin-top:-110px;
+		position:absolute;
+		right:0;
+		margin-right:60px;
+		margin-top:-100px;
 	}
 	#player2Wrapper{
 		margin-bottom:20px;
@@ -168,7 +170,7 @@
 					</div>
 				</div>
 				</div>
-				<div class="playerCards" style="display:inline-block;text-align:center">
+				<div class="playerCards" style="display:inline-block;text-align:center;vertical-align:top">
 					<img src="../../img/forge.png" style="height:15px;width:15px;margin:auto;margin-top:28px">
 				</div>
 			</div>
@@ -213,9 +215,18 @@
 				</div>
 			</div>
 			<div id="player2Wrapper" class="col-3" style="height: 120px;">
-				<h1 class="text-center m-0">Player 2</h1>
+				<div style="display:inline-block">
+					<h1 class="text-center m-0" style="display:inline-block;"><c:out value="${current_game.players.get(1).userName}"/></h1>
 				<div class="text-center text-danger m-0">
-					<i class="fas fa-heart mr-1"></i><i class="fas fa-heart mr-1"></i><i class="fas fa-heart mr-1"></i><i class="fas fa-heart mr-1"></i><i class="fas fa-heart mr-1"></i><i class="fas fa-heart mr-1"></i>
+					<div style="display:inline-block">
+						<c:forEach begin="0" end="${current_game.players.get(1).health}" varStatus="loop">
+							<i class="fas fa-heart mr-1"></i>
+						</c:forEach>
+					</div>
+				</div>
+				</div>
+				<div class="playerCards" style="display:inline-block;text-align:center;vertical-align:top">
+					<img src="../../img/forge.png" style="height:15px;width:15px;margin:auto;margin-top:28px">
 				</div>
 			</div>
 		</div>
@@ -223,35 +234,71 @@
 	<div class="container-fluid">
 		<div class="row" style="margin-top:-120px;">
 			<div id="player3Wrapper" class="col-3" style="height: 120px;">
-				<h1 class="text-center m-0" >Player 3</h1>
+				<div style="display:inline-block">
+					<h1 class="text-center m-0" style="display:inline-block;"><c:out value="${current_game.players.get(2).userName}"/></h1>
 				<div class="text-center text-danger m-0">
-					<i class="fas fa-heart mr-1"></i><i class="fas fa-heart mr-1"></i><i class="fas fa-heart mr-1"></i><i class="fas fa-heart mr-1"></i><i class="fas fa-heart mr-1"></i><i class="fas fa-heart mr-1"></i>
+					<div style="display:inline-block">
+						<c:forEach begin="0" end="${current_game.players.get(2).health}" varStatus="loop">
+							<i class="fas fa-heart mr-1"></i>
+						</c:forEach>
+					</div>
+				</div>
+				</div>
+				<div class="playerCards" style="display:inline-block;text-align:center;vertical-align:top">
+					<img src="../../img/forge.png" style="height:15px;width:15px;margin:auto;margin-top:28px">
 				</div>
 			</div>
 			<div id="fire" class="col-6" style="height: 150px;text-align:center">
 				<img src="https://media.giphy.com/media/Mp0BJWd9nC5Y4/giphy.gif" style="height:120px;width:auto">
 				<a href="" id="phaser" class="btn btn-primary d-block" style="width:200px;margin:auto;background:#633c14;border:none;margin-top:10px">Next Phase</a>
 			</div>
-			<div id="player4Wrapper" class="col-3 m-0" style="height: 120px;">
-				<h1 class="text-center">Player 4</h1>
+			<div id="player4Wrapper" class="col-3" style="height: 120px;">
+				<div style="display:inline-block">
+					<h1 class="text-center m-0" style="display:inline-block;"><c:out value="${current_game.players.get(3).userName}"/></h1>
 				<div class="text-center text-danger m-0">
-					<i class="fas fa-heart mr-1"></i><i class="fas fa-heart mr-1"></i><i class="fas fa-heart mr-1"></i><i class="fas fa-heart mr-1"></i><i class="fas fa-heart mr-1"></i><i class="fas fa-heart mr-1"></i>
+					<div style="display:inline-block">
+						<c:forEach begin="0" end="${current_game.players.get(3).health}" varStatus="loop">
+							<i class="fas fa-heart mr-1"></i>
+						</c:forEach>
+					</div>
+				</div>
+				</div>
+				<div class="playerCards" style="display:inline-block;text-align:center;vertical-align:top">
+					<img src="../../img/forge.png" style="height:15px;width:15px;margin:auto;margin-top:28px">
 				</div>
 			</div>
 		</div>
 	</div>
 	<div class="container-fluid">
-		<div class="row">
-			<div id="player5Wrapper" class="container col-4" style="height: 120px;">
-				<h1 class="text-center m-0">Player 5</h1>
+		<div class="row" style="position:relative">
+			<div id="player5Wrapper" class="col-3" style="height: 120px;">
+				<div style="display:inline-block">
+					<h1 class="text-center m-0" style="display:inline-block;"><c:out value="${current_game.players.get(4).userName}"/></h1>
 				<div class="text-center text-danger m-0">
-					<i class="fas fa-heart mr-1"></i><i class="fas fa-heart mr-1"></i><i class="fas fa-heart mr-1"></i><i class="fas fa-heart mr-1"></i><i class="fas fa-heart mr-1"></i><i class="fas fa-heart mr-1"></i>
+					<div style="display:inline-block">
+						<c:forEach begin="0" end="${current_game.players.get(4).health}" varStatus="loop">
+							<i class="fas fa-heart mr-1"></i>
+						</c:forEach>
+					</div>
+				</div>
+				</div>
+				<div class="playerCards" style="display:inline-block;text-align:center;vertical-align:top">
+					<img src="../../img/forge.png" style="height:15px;width:15px;margin:auto;margin-top:28px">
 				</div>
 			</div>
-			<div id="player6Wrapper" class="container col-4" style="height: 120px;">
-				<h1 class="text-center m-0">Player 6</h1>
+			<div id="player6Wrapper" class="col-3" style="height: 120px;">
+				<div style="display:inline-block">
+					<h1 class="text-center m-0" style="display:inline-block;"><c:out value="${current_game.players.get(5).userName}"/></h1>
 				<div class="text-center text-danger m-0">
-					<i class="fas fa-heart mr-1"></i><i class="fas fa-heart mr-1"></i><i class="fas fa-heart mr-1"></i><i class="fas fa-heart mr-1"></i><i class="fas fa-heart mr-1"></i><i class="fas fa-heart mr-1"></i>
+					<div style="display:inline-block">
+						<c:forEach begin="0" end="${current_game.players.get(5).health}" varStatus="loop">
+							<i class="fas fa-heart mr-1"></i>
+						</c:forEach>
+					</div>
+				</div>
+				</div>
+				<div class="playerCards" style="display:inline-block;text-align:center;vertical-align:top">
+					<img src="../../img/forge.png" style="height:15px;width:15px;margin:auto;margin-top:28px">
 				</div>
 			</div>
 		</div>
