@@ -22,13 +22,13 @@
 
 <style>
 #ocean {
-
-        
-        background: rgb(24, 216, 227);
-        background: radial-gradient(circle, rgba(24, 216, 227, 1) 26%, rgba(71, 78, 196, 1) 100%);
-       /*  background-size: 100% 200px; */
-        height: 1000px;
-    }
+	background: rgb(4, 0, 71);
+	background: linear-gradient(0deg, rgba(4, 0, 71, 1) 0%,
+		rgba(16, 16, 159, 1) 35%, rgba(186, 239, 250, 1) 100%);
+	background-size: 100% 100%;
+	height: 100vh;
+	width: 100vw;
+}
 
 </style>
 
@@ -71,7 +71,7 @@
 					</tbody>
 				</table>
 			</div>
-			<a href="/getShipwrecked/${current_game.id }/go" class="btn btn-outline-info"><h2 class="pl-5 pr-5">Start</h2></a>
+			<a href="/getShipwrecked/${current_game.id }/go" class="btn btn-info"><h2 class="pl-5 pr-5">Start</h2></a>
 		</div>
 	</div>
 

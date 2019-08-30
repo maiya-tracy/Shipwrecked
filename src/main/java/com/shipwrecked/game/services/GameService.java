@@ -15,7 +15,6 @@ public class GameService {
 	GameRepository gameRepository;
 	
 	public Game createGame(Game game) {
-		// TODO Auto-generated method stub
 		return gameRepository.save(game);
 	}
 	public Game findById(Long id) {
