@@ -17,42 +17,47 @@ import com.shipwrecked.game.models.User;
 import com.shipwrecked.game.services.GameService;
 import com.shipwrecked.game.services.UserService;
 
-
 @Controller
 public class GameCtrl {
-	
+
 	@Autowired
 	GameService gameService;
 	@Autowired
 	UserService playerService;
 
-
 	@GetMapping("/getShipwrecked")
 	public String createOrJoinPage(@ModelAttribute("newGame") Game game) {
 		return "game/createOrJoinPage.jsp";
 	}
-	
+
 	@PostMapping("/getShipwrecked/process")
-		public String createAndJoinGame(@ModelAttribute("newGame") Game game, BindingResult results, HttpSession session) {
+	public String createAndJoinGame(@ModelAttribute("newGame") Game game, BindingResult results, HttpSession session) {
 		if (results.hasErrors()) {
 			return "game/createOrJoinPage.jsp";
 		} else {
 			User current_user = (User) session.getAttribute("player");
-			
 			Game new_game = gameService.createGame(game);
-			this.AddPlayerToGame(current_user.getId(), new_game.getId(), session);
-			return "redirect:/getShipwrecked/" + new_game.getId();
+			if (new_game.getPlayers().size() >= 6) {
+				return "redirect:/getShipwrecked/";
+			} else {
+				this.AddPlayerToGame(current_user.getId(), new_game.getId(), session);
+				return "redirect:/getShipwrecked/" + new_game.getId();
+			}
 		}
 	}
+
 	@PostMapping("/getShipwrecked/process/join")
 	public String JoinGame(@RequestParam("lobbyJoinName") String lobbyJoinName, HttpSession session) {
 		User current_user = (User) session.getAttribute("player");
-		
 		Game current_game = gameService.findByName(lobbyJoinName);
-		this.AddPlayerToGame(current_user.getId(), current_game.getId(), session);
-		return "redirect:/getShipwrecked/" + current_game.getId();
+		if (current_game.getPlayers().size() >= 6) {
+			return "redirect:/getShipwrecked/";
+		} else {
+			this.AddPlayerToGame(current_user.getId(), current_game.getId(), session);
+			return "redirect:/getShipwrecked/" + current_game.getId();
+		}
 	}
-	
+
 	public void AddPlayerToGame(Long player_id, Long game_id, HttpSession session) {
 		User player = playerService.findById(player_id);
 		Game current_game = gameService.findById(game_id);
@@ -60,7 +65,7 @@ public class GameCtrl {
 		playerService.createPlayer(player);
 		session.setAttribute("current_game", current_game);
 	}
-	
+
 	@GetMapping("/getShipwrecked/{game_id}")
 	public String lobby(@PathVariable("game_id") Long game_id, Model model, HttpSession session) {
 		Game current_game = gameService.findById(game_id);
@@ -69,6 +74,7 @@ public class GameCtrl {
 		model.addAttribute("current_player", current_user);
 		return "game/lobby.jsp";
 	}
+
 	@GetMapping("/getShipwrecked/{game_id}/go")
 	public String inGame(@PathVariable("game_id") Long game_id) {
 		return "game/inGame.jsp";
