@@ -9,6 +9,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
 <meta http-equiv="refresh" content="5">
 <title>Shipwrecked | Lobby</title>
 
@@ -20,17 +21,14 @@
 </head>
 
 <style>
-
-
 #ocean {
-       
-        background: rgb(4,0,71);
-		background: linear-gradient(0deg, rgba(4,0,71,1) 0%, rgba(16,16,159,1) 35%, rgba(186,239,250,1) 100%);
-        background-size: 100% 100%; 
-        height: 100vh;
-	    width: 100vw;
-     }
 
+        
+        background: rgb(24, 216, 227);
+        background: radial-gradient(circle, rgba(24, 216, 227, 1) 26%, rgba(71, 78, 196, 1) 100%);
+       /*  background-size: 100% 200px; */
+        height: 1000px;
+    }
 
 </style>
 
@@ -64,7 +62,6 @@
 							varStatus="loop">
 
 							<tr class="table text-light">
-							
 									<th scope="row"><c:out value="${loop.index + 1 }" /></th>
 									<td>Icon</td>
 									<td><c:out value="${player.userName}" /></td>

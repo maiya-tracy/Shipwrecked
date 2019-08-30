@@ -1,7 +1,5 @@
 package com.shipwrecked.game.controllers;
 
-import java.util.ArrayList;
-
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,10 +12,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.shipwrecked.game.models.Forage;
 import com.shipwrecked.game.models.ForageDeck;
 import com.shipwrecked.game.models.Game;
-import com.shipwrecked.game.models.Madness;
 import com.shipwrecked.game.models.User;
 import com.shipwrecked.game.services.DeckService;
 import com.shipwrecked.game.services.GameService;
