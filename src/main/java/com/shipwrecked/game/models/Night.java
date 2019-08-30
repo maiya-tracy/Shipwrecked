@@ -26,6 +26,10 @@ public class Night {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name="deck_id")
     private NightDeck deck;
+	
+	
+	
+	
 
 
 
