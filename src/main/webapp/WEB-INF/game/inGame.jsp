@@ -10,9 +10,13 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
-<script src="https://kit.fontawesome.com/cde5077fb4.js"></script>
 <meta charset="ISO-8859-1">
+
 <title>Shipwrecked</title>
+
+<script src="https://kit.fontawesome.com/cde5077fb4.js"></script>
+
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
 	$(document).ready(function(){
@@ -33,6 +37,7 @@
 			function(){$(this).removeClass("shadowInset")}
 		)
 	})	
+
 </script>
 <style>
 
@@ -132,6 +137,7 @@
 		display:none;
 	}
 </style>
+
 </head>
 <body>
 <div id="wrapper" class="container-fluid pt-5 text-monospace">

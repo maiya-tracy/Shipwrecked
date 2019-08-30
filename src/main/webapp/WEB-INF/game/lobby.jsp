@@ -9,17 +9,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
 <title>Shipwrecked | Lobby</title>
 
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
+	
 </head>
 
 <style>
-
-
 #ocean {
         
         background: rgb(24, 216, 227);
@@ -27,14 +27,6 @@
        /*  background-size: 100% 200px; */
         height: 1000px;
     }
-
-
-
-
-
-
-
-
 </style>
 
 <body>
@@ -68,7 +60,7 @@
 
 							<tr class="table">
 							
-									<th scope="row" style="backgound-color: green;"><c:out value="${loop.index + 1 }" /></th>
+									<th scope="row";"><c:out value="${loop.index + 1 }" /></th>
 									<td>Icon</td>
 									<td><c:out value="${player.userName}" /></td>
 							</tr>
